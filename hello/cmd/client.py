@@ -5,7 +5,6 @@ from yaml import load as yload
 
 import requests
 
-
 def main(argv=None):
 
     parser = ArgumentParser(description="Solve a vector packing problem.")

@@ -4,7 +4,8 @@ MAINTAINER Mark Stillwell <mark@stillwell.me>
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && \
     apt-get -y install \
-        curl && \
+        curl \
+        python && \
     rm -rf /var/lib/apt/lists/* /var/cache/apt/*
 
 RUN curl -s https://bootstrap.pypa.io/get-pip.py | python -
