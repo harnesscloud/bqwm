@@ -15,7 +15,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
-from hbwm.cmd import main
+from bqwm.cmd import main
 
 if __name__ == "__main__":
     main()

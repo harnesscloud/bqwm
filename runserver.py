@@ -1,5 +1,5 @@
 #!/usr/bin/env python
 
-from hbwm import api
+from bqwm import api
 
 api.run(debug=True)
