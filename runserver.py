@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
-from bqwm.api import app
+from bqwm.api import create_app
 
+app = create_app()
 app.run(host='0.0.0.0', debug=True)
