@@ -1,4 +1,8 @@
-web:
+api:
   build: .
+  links:
+    - db
   ports:
-   - "5000:5000"
+    - "5000:5000"
+db:
+  image: postgres
