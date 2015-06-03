@@ -1,7 +1,10 @@
 HARNESS project batch queue workload manager
 ============================================
 
-`status <https://travis-ci.org/marklee77/bqwm>`
+https://travis-ci.org/marklee77/bqwm
+
+|status|
+
 .. |status| image:: https://travis-ci.org/marklee77/bqwm.svg?branch=master
 
 This project provides the batch queue manager for HARNESS. It includes a batch
