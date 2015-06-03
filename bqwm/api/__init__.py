@@ -1,4 +1,4 @@
-from service import app
+from flask import Flask
+app = Flask(__name__)
 
-def run(*args, **kwargs):
-    app.run(*args, **kwargs)
+import bqwm.api.views

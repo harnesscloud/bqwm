@@ -14,7 +14,7 @@ def main(argv=None):
 
     configs = yload(open(args.input, 'r'))
 
-    response = requests.post("http://127.0.0.1:5000/createReservation",
+    response = requests.post("http://127.0.0.1:5000/v2.0/createReservation",
                              json=configs)
 
     print response.text

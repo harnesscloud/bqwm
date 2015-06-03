@@ -1,1 +1,1 @@
-from dummy import sched
+from dummy import createReservation
