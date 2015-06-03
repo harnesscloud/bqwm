@@ -1,4 +1,4 @@
-- name
 - configuration
 - basic unit tests
-
+- manager interface
+- coveralls...
