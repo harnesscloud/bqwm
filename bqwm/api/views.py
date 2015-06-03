@@ -2,21 +2,21 @@ from flask import Blueprint, request, json
 
 from bqwm.schedulers import createReservation
 
-api = Blueprint('api', __name__)
+api_v2_0 = Blueprint('api_v2_0', __name__)
 
 
-@api.route('/addManager', methods=['POST'])
-def api2_addManager():
+@api_v2_0.route('/addManager', methods=['POST'])
+def api_addManager():
     return json.dumps({})
 
 
-@api.route('/getConfigurationCost', methods=['POST'])
-def api2_getConfigurationCost():
+@api_v2_0.route('/getConfigurationCost', methods=['POST'])
+def api_getConfigurationCost():
     return json.dumps({"Costs": []})
 
 
-@api.route('/createReservation', methods=['POST'])
-def api2_createReservation():
+@api_v2_0.route('/createReservation', methods=['POST'])
+def api_createReservation():
 
     jobdesc = {}
 
@@ -29,16 +29,16 @@ def api2_createReservation():
     return json.dumps(jobres)
 
 
-@api.route('/checkReservation', methods=['GET'])
-def api2_checkReservation():
+@api_v2_0.route('/checkReservation', methods=['GET'])
+def api_checkReservation():
     return json.dumps({"Ready": False})
 
 
-@api.route('/getReservationMetrics', methods=['GET'])
-def api2_getReservationMetrics():
+@api_v2_0.route('/getReservationMetrics', methods=['GET'])
+def api_getReservationMetrics():
     return json.dumps({"Reservations": []})
 
 
-@api.route('/releaseReservation', methods=['DELETE'])
-def api2_releaseReservation():
+@api_v2_0.route('/releaseReservation', methods=['DELETE'])
+def api_releaseReservation():
     return json.dumps({})
