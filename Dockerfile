@@ -10,11 +10,11 @@ RUN apt-get update && \
 
 RUN curl -s https://bootstrap.pypa.io/get-pip.py | python -
 
-WORKDIR /service
-ADD requirements.txt /service/
-RUN pip install -r requirements.txt
 ADD . /service
+WORKDIR /service
+RUN pip install -r requirements.txt
+RUN pip install -e .
 
-RUN ln -s runapp.py /etc/my_init.d/10-runapp.py
+RUN ln -s runserver.py /etc/my_init.d/10-runserver.py
 
-EXPOSE 80
+EXPOSE 5000
