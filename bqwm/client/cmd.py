@@ -1,9 +1,8 @@
-#!/usr/bin/env python
-
 from argparse import ArgumentParser
 from yaml import load as yload
 
 import requests
+
 
 def main(argv=None):
 

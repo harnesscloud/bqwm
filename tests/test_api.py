@@ -1,13 +1,13 @@
 from flask import json
 import unittest
 
-from bqwm import api
+from bqwm.service import create_app
 
 
 class BqwmTestCase(unittest.TestCase):
 
     def setUp(self):
-        app = api.create_app()
+        app = create_app()
         app.config['TESTING'] = True
         self.client = app.test_client()
 
