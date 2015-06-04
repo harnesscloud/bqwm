@@ -1,0 +1,5 @@
+*.md
+*.rst
+*.pyc
+bqwm.egg-info
+tests
