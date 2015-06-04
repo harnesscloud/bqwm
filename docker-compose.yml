@@ -1,6 +1,4 @@
 api:
   build: .
-  links:
-    - db
   ports:
     - "5000:5000"
