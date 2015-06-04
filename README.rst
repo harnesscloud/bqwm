@@ -1,13 +1,16 @@
 HARNESS project batch queue workload manager
 ============================================
 
-|build-status|_ |coverage|_
+|travis-ci|_ |coveralls|_ |codecov|_
 
-.. |build-status| image:: https://travis-ci.org/harnesscloud/bqwm.svg
-.. _build-status: https://travis-ci.org/harnesscloud/bqwm
+.. |travis-ci| image:: https://travis-ci.org/harnesscloud/bqwm.svg
+.. _travis-ci: https://travis-ci.org/harnesscloud/bqwm
 
-.. |coverage| image:: https://coveralls.io/repos/harnesscloud/bqwm/badge.svg
-.. _coverage: https://coveralls.io/r/harnesscloud/bqwm
+.. |coveralls| image:: https://coveralls.io/repos/harnesscloud/bqwm/badge.svg
+.. _coveralls: https://coveralls.io/r/harnesscloud/bqwm
+
+.. |codecov| image:: http://codecov.io/github/harnesscloud/bqwm/coverage.svg
+   _codecov: http://codecov.io/github/harnesscloud/bqwm?branch=master
 
 This project provides the batch queue manager for HARNESS. It includes a batch
 job scheduler with a restful interface and a command line client.
