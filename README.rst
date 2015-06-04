@@ -9,7 +9,7 @@ HARNESS project batch queue workload manager
 .. |coveralls| image:: https://coveralls.io/repos/harnesscloud/bqwm/badge.svg
 .. _coveralls: https://coveralls.io/r/harnesscloud/bqwm
 
-.. |codecov| image:: http://codecov.io/github/harnesscloud/bqwm/coverage.svg
+.. |codecov| image:: http://codecov.io/github/harnesscloud/bqwm/coverage.svg?branch=master
    _codecov: http://codecov.io/github/harnesscloud/bqwm?branch=master
 
 This project provides the batch queue manager for HARNESS. It includes a batch
