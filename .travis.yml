@@ -4,14 +4,13 @@ python: "2.7"
 
 before_install:
     - pip install -r requirements.txt
-    - pip install python-coveralls
+    - pip install coveralls
 
 install:
     - pip install -e .
 
 script: 
-    - nosetests -v --with-coverage
-    - ls -Falh
+    - coverage run --source=bqwm setup.py test
 
 after_success: 
     - coveralls

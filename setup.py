@@ -3,9 +3,23 @@ See:
 http://www.harness-project.eu
 """
 
+import sys
 from setuptools import setup, find_packages
+from setuptools.command.test import test as TestCommand
 from codecs import open
 from os import path
+
+
+class PyTest(TestCommand):
+    def finalize_options(self):
+        TestCommand.finalize_options(self)
+        self.test_args = []
+        self.test_suite = True
+
+    def run_tests(self):
+        import pytest
+        errno = pytest.main(self.test_args)
+        sys.exit(errno)
 
 here = path.abspath(path.dirname(__file__))
 
@@ -61,7 +75,7 @@ setup(
     # $ pip install -e .[dev,test]
     extras_require={
         'dev': ['check-manifest'],
-        'test': ['coverage'],
+        'test': ['pytest', 'coverage'],
     },
 
     # If there are data files included in your packages that need to be
@@ -85,4 +99,7 @@ setup(
             'hbqsub=bqwm.cmd:main',
         ],
     },
+
+    # command overrides
+    cmdclass={'test': PyTest},
 )
