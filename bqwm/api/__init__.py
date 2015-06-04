@@ -37,6 +37,8 @@ def main(argv=None):
     from argparse import ArgumentParser
 
     parser = ArgumentParser(description="BQWM api daemon")
+    parser.add_argument('-b', '--bind', help='bind to ip address',
+                        default='127.0.0.1')
     parser.add_argument('-n', '--nofork', help='tell daemon not to fork',
                         action='store_true')
     args = parser.parse_args()
@@ -45,7 +47,7 @@ def main(argv=None):
 
     app = create_app()
     with DaemonContext(detach_process=detach_process):
-        app.run(host='0.0.0.0')
+        app.run(host=args.bind)
 
 
 if __name__ == "__main__":
