@@ -1,4 +1,4 @@
-from flask import Blueprint, request, json
+from flask import Blueprint, current_app, json, request
 
 from bqwm.schedulers import createReservation
 
@@ -24,7 +24,7 @@ def api_createReservation():
         if isinstance(request.json, dict):
             jobdesc = request.json
 
-    jobres = createReservation(jobdesc)
+    jobres = createReservation(current_app.config, jobdesc)
 
     return json.dumps(jobres)
 
