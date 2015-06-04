@@ -31,3 +31,10 @@ def load_config(app, cfg):
         app.config.from_pyfile(cfg, silent=False)
 
     print app.config
+
+def main(argv=None):
+    app = create_app()
+    app.run(host='0.0.0.0')
+
+if __name__ == "__main__":
+    main()
