@@ -11,6 +11,7 @@ install:
 
 script: 
     - nosetests -v --with-coverage
+    - ls -Falh
 
 after_success: 
     - coveralls
