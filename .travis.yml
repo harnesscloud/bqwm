@@ -10,7 +10,7 @@ install:
     - pip install -e .
 
 script: 
-    - nosetests -v
+    - nosetests -v --with-coverage
 
 after_success: 
     - coveralls
