@@ -1,9 +1,10 @@
 FROM python:2.7
 MAINTAINER Mark Stillwell <mark@stillwell.me>
 
-ADD . /service
-WORKDIR /service
-RUN pip install -r requirements.txt
+ADD . /srv/bqwm
+WORKDIR /srv/bqwm
+RUN pip install -U -r requirements.txt
+RUN pip install -U -e .
 
-CMD python runserver.py
+CMD bqwmd
 EXPOSE 5000
