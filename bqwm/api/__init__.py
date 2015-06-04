@@ -1,6 +1,7 @@
 import os
 from flask import Flask
 
+from bqwm.api.runserver import main
 from bqwm.api.views import api_v2_0
 
 

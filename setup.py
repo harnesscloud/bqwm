@@ -96,7 +96,8 @@ setup(
     # pip to create the appropriate form of executable for the target platform.
     entry_points={
         'console_scripts': [
-            'hbqsub=bqwm.cmd:main',
+            'bqwmd=bqwm.api:main',
+            'bqwmc=bqwm.cmd:main',
         ],
     },
 
