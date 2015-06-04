@@ -1,7 +1,6 @@
 import os
 from flask import Flask
 
-from bqwm.api.runserver import main
 from bqwm.api.views import api_v2_0
 
 
@@ -32,9 +31,11 @@ def load_config(app, cfg):
 
     print app.config
 
+
 def main(argv=None):
     app = create_app()
     app.run(host='0.0.0.0')
+
 
 if __name__ == "__main__":
     main()
