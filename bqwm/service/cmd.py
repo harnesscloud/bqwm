@@ -6,14 +6,16 @@ from bqwm.service import create_app
 
 def main(argv=None):
 
-    parser = ArgumentParser(description="BQWM api daemon")
-    parser.add_argument('-b', '--bind', help='bind to ip address',
-                        default='127.0.0.1')
-    parser.add_argument('-p', '--port', help='listen port',
-                        default='5000')
-    parser.add_argument('-n', '--nofork', help='tell daemon not to fork',
-                        action='store_true')
+    parser = ArgumentParser(description="batch queue workload manager daemon")
+    parser.add_argument('-b', '--bind', default='127.0.0.1',
+                        help='tcp bind address')
+    parser.add_argument('-p', '--port', default='5000',
+                        help='tcp listen port')
+    parser.add_argument('-n', '--nofork', action='store_true',
+                        help='do not fork to background')
     parser.add_argument('-c', '--config', help='override config file')
+    parser.add_argument('-d', '--debug', action='store_true',
+                        help='debug mode')
 
     args = parser.parse_args()
 
@@ -21,8 +23,11 @@ def main(argv=None):
 
     detach_process = not args.nofork
 
-    with DaemonContext(detach_process=detach_process):
-        app.run(host=args.bind, port=args.port)
+    if args.debug:
+        app.run(debug=True)
+    else:
+        with DaemonContext(detach_process=detach_process):
+            app.run(host=args.bind, port=args.port)
 
 
 if __name__ == "__main__":
