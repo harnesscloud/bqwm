@@ -1,4 +1,5 @@
 import os
+from daemon import DaemonContext
 from flask import Flask
 
 from bqwm.api.views import api_v2_0
@@ -33,8 +34,18 @@ def load_config(app, cfg):
 
 
 def main(argv=None):
+    from argparse import ArgumentParser
+
+    parser = ArgumentParser(description="BQWM api daemon")
+    parser.add_argument('-n', '--nofork', help='tell daemon not to fork',
+                        action='store_true')
+    args = parser.parse_args()
+
+    detach_process = not args.nofork
+
     app = create_app()
-    app.run(host='0.0.0.0')
+    with DaemonContext(detach_process=detach_process):
+        app.run(host='0.0.0.0')
 
 
 if __name__ == "__main__":

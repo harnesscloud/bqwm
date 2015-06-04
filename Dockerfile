@@ -6,5 +6,5 @@ WORKDIR /srv/bqwm
 RUN pip install -U -r requirements.txt
 RUN pip install -U -e .
 
-CMD bqwmd
+CMD bqwmd --nofork
 EXPOSE 5000
