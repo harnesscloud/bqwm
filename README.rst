@@ -3,8 +3,8 @@ HARNESS project batch queue workload manager
 
 |build-status|_ |coverage|_
 
-.. |build-status| image:: https://travis-ci.org/marklee77/bqwm.svg?branch=master
-.. _build-status: https://travis-ci.org/marklee77/bqwm
+.. |build-status| image:: https://travis-ci.org/harnesscloud/bqwm.svg
+.. _build-status: https://travis-ci.org/harnesscloud/bqwm
 
 .. |coverage| image:: https://coveralls.io/repos/harnesscloud/bqwm/badge.svg
 .. _coverage: https://coveralls.io/r/harnesscloud/bqwm
