@@ -1,4 +1,4 @@
-from flask import Blueprint, current_app, json, request
+from flask import Blueprint, Response, abort, current_app, json, request
 
 from bqwm.schedulers import createReservation
 
@@ -18,13 +18,11 @@ def api_getConfigurationCost():
 @api_v2_0.route('/createReservation', methods=['POST'])
 def api_createReservation():
 
-    jobdesc = {}
+    if (request.headers['Content-Type'] != 'application/json' or
+            not isinstance(request.json, dict)):
+        abort(400)
 
-    if request.headers['Content-Type'] == 'application/json':
-        if isinstance(request.json, dict):
-            jobdesc = request.json
-
-    jobres = createReservation(current_app.config, jobdesc)
+    jobres = createReservation(current_app.config, request.json)
 
     return json.dumps(jobres)
 

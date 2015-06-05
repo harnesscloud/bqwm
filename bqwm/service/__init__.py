@@ -29,5 +29,3 @@ def load_config(app, cfg):
 
     if cfg is not None:
         app.config.from_pyfile(cfg, silent=False)
-
-    print app.config
