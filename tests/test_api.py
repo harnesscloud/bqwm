@@ -26,7 +26,9 @@ class BqwmTestCase(unittest.TestCase):
         assert(len(data["Costs"]) == 0)
 
     def test_createReservation(self):
-        response = self.client.post('/v2.0/createReservation')
+        response = self.client.post('/v2.0/createReservation',
+                                    content_type='application/json',
+                                    data=json.dumps({}))
         data = json.loads(response.data)
         assert(isinstance(data, dict))
         assert(len(data) == 0)
