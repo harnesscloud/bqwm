@@ -1,7 +1,7 @@
 import os
 from flask import Flask
 
-from bqwm.service.api import api_v2_0
+from bqwm.service.views import api_v2_0
 
 
 class default_settings(object):
