@@ -10,11 +10,11 @@ def main(argv=None):
     parser.add_argument('-s', '--server', default='127.0.0.1', 
                         help='bqwmd server')
     parser.add_argument('-p', '--port', default='5000', help='bqwmd port')
-    parser.add_argument('-i', '--input', help='input file')
+    parser.add_argument('-s', '--submit', help='submit jobspec file')
 
     args = parser.parse_args()
 
-    configs = yload(open(args.input, 'r'))
+    configs = yload(open(args.submit, 'r'))
 
     service_url = "http://{}:{}/v2.0/createReservation".format(args.server,
                                                                args.port)
