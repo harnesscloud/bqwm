@@ -1,4 +1,6 @@
-from bqwm.service.models import db, JobConfiguration
+from bqwm.database import db
+from bqdm.models import JobConfiguration
+
 
 def createReservation(config, jobdesc):
     configs = jobdesc.get("Configurations", [])

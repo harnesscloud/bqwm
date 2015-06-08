@@ -1,7 +1,7 @@
 from argparse import ArgumentParser
 from daemon import DaemonContext
 
-from bqwm.service import create_app
+from bqwm import create_app
 
 
 def main(argv=None):
