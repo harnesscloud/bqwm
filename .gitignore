@@ -1,6 +1,7 @@
 .*.swp
 *.pyc
 .coverage
+.eggs
 .python-version
 bqwm.egg-info
 instance/*
