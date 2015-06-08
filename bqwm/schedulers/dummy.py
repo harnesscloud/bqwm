@@ -1,5 +1,5 @@
 from bqwm.database import db
-from bqdm.models import JobConfiguration
+from bqwm.models import JobConfiguration
 
 
 def createReservation(config, jobdesc):
