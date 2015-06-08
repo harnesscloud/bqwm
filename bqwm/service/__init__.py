@@ -1,4 +1,8 @@
+import os
+
+
 class default_settings(object):
+
     SCHEDULER_STRATEGY = 'dummy'
 
 
@@ -10,7 +14,7 @@ def create_app(cfg=None):
 
     from bqwm.service.models import db
     db.init_app(app)
-    db.create_all(app=app)
+
     from bqwm.service import models
 
     from bqwm.service.views import api_v2_0
@@ -20,12 +24,11 @@ def create_app(cfg=None):
 
 
 def load_config(app, cfg):
-    import os
 
-    basedir = os.path.abspath(os.path.dirname(__file__))
-    app.config.SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir,
-                                                                     'app.db')
-    app.config.SQLALCHEMY_MIGRATE_REPO = os.path.join(basedir, 'db_repository')
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///{}'.format(
+        os.path.join(app.instance_path, 'bqwm.db'))
+    app.config['SQLALCHEMY_MIGRATE_REPO'] = os.path.join(app.instance_path,
+                                                         'db_repository')
 
     app.config.from_object('bqwm.service.default_settings')
     app.config.from_pyfile('/etc/bqwm/default.cfg', silent=True)

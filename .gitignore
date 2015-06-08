@@ -1,5 +1,7 @@
 .*.swp
 *.pyc
-bqwm.egg-info
 .coverage
 .python-version
+bqwm.egg-info
+instance/*
+!instance/default.cfg
