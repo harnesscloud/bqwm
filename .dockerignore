@@ -1,4 +1,15 @@
-*.pyc
+**/.*.swp
+**/*.pyc
+**/__pycache__
+.coverage
+.dockerignore
+.eggs
+.git
+.gitignore
+.python-version
+.travis.yml
 bqwm.egg-info
+docker-compose.yml
+instance/*
+run_tests.sh
 tests
-__pycache__
