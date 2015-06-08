@@ -8,5 +8,12 @@ class JobConfiguration(db.Model):
     estimated_time = db.Column(db.Integer)
     price = db.Column(db.Integer)
 
+    def __init__(self, utility_function, estimated_time, price):
+        self.utility_function = utility_function
+        self.estimated_time = estimated_time
+        self.price = price
+
     def __repr__(self):
-        return '<User %r>' % (self.nickname)
+        return 'JobConfiguration: {} {} {}'.format(self.utility_function,
+                                                   self.estimated_time,
+                                                   self.price)
