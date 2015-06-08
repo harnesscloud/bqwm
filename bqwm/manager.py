@@ -1,18 +1,12 @@
 from flask.ext.script import Manager
+from flask.ext.migrate import MigrateCommand
 
 from bqwm.app import create_app
+from bqwm.database import db
 
-manager = Manager(create_app())
-
-
-@manager.command
-def hello():
-    print "Hello!"
-
-
-@manager.command
-def start():
-    print "Start!"
+manager = Manager(create_app)
+manager.add_option('-c', '--config', dest='cfg', required=False)
+manager.add_command('db', MigrateCommand)
 
 
 def main(argv=None):

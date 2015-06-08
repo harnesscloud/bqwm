@@ -98,6 +98,7 @@ setup(
         'console_scripts': [
             'bqwmd=bqwm.server:main',
             'bqwmc=bqwm.client:main',
+            'bqwm-manage=bqwm.manager:main'
         ],
     },
 

@@ -11,8 +11,9 @@ def create_app(cfg=None):
 
     load_config(app, cfg)
 
-    from bqwm.database import db
+    from bqwm.database import db, migrate
     db.init_app(app)
+    migrate.init_app(app, db)
 
     from bqwm import models
 
