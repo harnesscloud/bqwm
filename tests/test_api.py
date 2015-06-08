@@ -1,7 +1,7 @@
 from flask import json
 import unittest
 
-from bqwm import create_app
+from bqwm.app import create_app
 
 
 class BqwmTestCase(unittest.TestCase):
