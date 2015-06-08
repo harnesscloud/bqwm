@@ -1,16 +1,12 @@
-from sqlalchemy import Column, Integer, String
-from sqlalchemy.ext.declarative import declarative_base
-
-Base = declarative_base()
+from bqwm.database import db
 
 
-class JobConfiguration(Base):
-    __tablename__ = 'job_configurations'
+class JobConfiguration(db.Model):
 
-    id = Column(Integer, primary_key=True)
-    utility_function = Column(String(64))
-    estimated_time = Column(Integer)
-    price = Column(Integer)
+    id = db.Column(db.Integer, primary_key=True)
+    utility_function = db.Column(db.String(64))
+    estimated_time = db.Column(db.Integer)
+    price = db.Column(db.Integer)
 
     def __init__(self, utility_function, estimated_time, price):
         self.utility_function = utility_function

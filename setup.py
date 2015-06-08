@@ -96,8 +96,8 @@ setup(
     # pip to create the appropriate form of executable for the target platform.
     entry_points={
         'console_scripts': [
-            'bqwmd=bqwm.service.cmd:main',
-            'bqwmc=bqwm.client.cmd:main',
+            'bqwmd=bqwm.server:main',
+            'bqwmc=bqwm.client:main',
         ],
     },
 
