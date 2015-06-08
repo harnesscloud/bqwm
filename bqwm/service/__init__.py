@@ -29,7 +29,6 @@ def load_config(app, cfg):
         os.path.join(app.instance_path, 'bqwm.db'))
     app.config['SQLALCHEMY_MIGRATE_REPO'] = os.path.join(app.instance_path,
                                                          'db_repository')
-
     app.config.from_object('bqwm.service.default_settings')
     app.config.from_pyfile('/etc/bqwm/default.cfg', silent=True)
     app.config.from_pyfile('default.cfg', silent=True)
