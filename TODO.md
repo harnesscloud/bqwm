@@ -4,3 +4,4 @@
 - requirements.txt vs install_requires
 - header on source file and literate documentation on functions...
 - gunicorn, uwsgi, or gevent startup? nginx proxy support?
+- check that built image is not importing any cache files

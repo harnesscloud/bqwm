@@ -1,7 +1,10 @@
 HARNESS project batch queue workload manager
 ============================================
 
-|travis-ci|_ |coveralls|_ |codecov|_
+|harness-buildbot|_ |travis-ci|_ |coveralls|_ |codecov|_
+
+.. |harness-buildbot| image:: https://buildbot.harness-project.eu/png?builder=bqwm-runtests
+.. _harness-buildbot: https://buildbot.harness-project.eu/builders/bqwm-runtests
 
 .. |travis-ci| image:: https://travis-ci.org/harnesscloud/bqwm.svg
 .. _travis-ci: https://travis-ci.org/harnesscloud/bqwm
