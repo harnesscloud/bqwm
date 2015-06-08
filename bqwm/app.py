@@ -13,7 +13,7 @@ def create_app(cfg=None):
 
     from bqwm.database import db, migrate
     db.init_app(app)
-    migrate.init_app(app, db)
+    migrate.init_app(app, db, app.config['SQLALCHEMY_MIGRATE_DIRECTORY'])
 
     from bqwm import models
 
@@ -27,8 +27,8 @@ def load_config(app, cfg):
 
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///{}'.format(
         os.path.join(app.instance_path, 'bqwm.db'))
-    app.config['SQLALCHEMY_MIGRATE_REPO'] = os.path.join(app.instance_path,
-                                                         'db_repository')
+    app.config['SQLALCHEMY_MIGRATE_DIRECTORY'] = os.path.join(
+        app.instance_path, 'migrations')
     app.config.from_object('bqwm.app.default_settings')
     app.config.from_pyfile('/etc/bqwm/default.cfg', silent=True)
     app.config.from_pyfile('default.cfg', silent=True)
