@@ -6,4 +6,3 @@
 bqwm.egg-info
 instance/*
 !instance/default.cfg
-!instance/migrations
