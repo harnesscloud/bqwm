@@ -1,6 +1,9 @@
 HARNESS project batch queue workload manager
 ============================================
 
+.. image:: https://zenodo.org/badge/7696/harnesscloud/bqwm.svg
+   :target: https://zenodo.org/badge/latestdoi/7696/harnesscloud/bqwm
+
 |harness-buildbot|_ |travis-ci|_ |coveralls|_ |codecov|_
 
 .. |harness-buildbot| image:: https://buildbot.harness-project.eu/png?builder=bqwm-runtests
